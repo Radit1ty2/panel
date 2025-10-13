@@ -4,7 +4,7 @@ x-common:
     &db-environment
     # Do not remove the "&db-password" from the end of the line below, it is important
     # for Panel functionality.
-    MYSQL_PASSWORD: &db-password "ra"
+    MYSQL_PASSWORD: &db-password "CHANGE_ME"
     MYSQL_ROOT_PASSWORD: "CHANGE_ME_TOO"
   panel:
     &panel-environment
@@ -26,7 +26,7 @@ x-common:
     MAIL_USERNAME: ""
     MAIL_PASSWORD: ""
     MAIL_ENCRYPTION: "true"
- 
+
 #
 # ------------------------------------------------------------------------------------------
 # DANGER ZONE BELOW
@@ -78,14 +78,3 @@ networks:
     ipam:
       config:
         - subnet: 172.20.0.0/16
-
-⟩ - - - First Command Root APT :  - - - ⟨
-- sudo apt update
-- sudo apt upgrade -y
-
-⟩ - - - Run File Docker :  - - - ⟨
-- docker-compose up -d
-
-⟩ - - - Create User Panel : - - - ⟨
-
-- docker-compose run --rm panel php artisan p:user:make
